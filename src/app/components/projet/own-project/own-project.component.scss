@@ -1,0 +1,27 @@
+td{
+    border:solid lightgray 2px;
+    border-bottom:solid lightsalmon 2px;
+}
+button{
+    margin-right:2%;
+}
+
+
+.grey{
+    background-color: lightslategrey !important;
+    border: 3px dashed  whitesmoke !important;
+}
+.orange{
+    background-color: orange !important;
+    border: 3px dashed  lightslategray !important;
+}
+.jaune{
+    background-color: yellowgreen !important;
+    border: 3px dashed  white !important;
+}
+
+@media screen and (max-width: 930px) {
+    .smartfor{
+        display: none !important;
+    }
+  }

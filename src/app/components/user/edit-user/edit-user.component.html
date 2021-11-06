@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="col-sm-8 col-sm-offset2">
+            <div class="form-group">
+            <label *ngIf="user != null">Voiçi les rôles de {{user.login}}</label>
+            <select class="form-select" aria-label="Default select example" *ngIf="user != null">
+                <option *ngFor="let role of user.role_pers" >{{role.label}}</option>
+              </select>
+            </div>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item"><label>ID</label> <br>{{user?.id}}</li>
+            <li class="list-group-item"><label>Prénom</label><br>{{user?.prenom}}</li>
+            <li class="list-group-item"><label>Nom</label><br>{{user?.nom}}</li>
+            <li class="list-group-item"><label>Login</label><br>{{user?.login}}</li>
+            <li class="list-group-item"><label>Email</label><br>{{user?.email}}</li>
+            <li class="list-group-item"><label>is_active</label><br>{{user?.is_active}}</li>
+            <li class="list-group-item"><label>is_verified</label><br>{{user?.is_verified}}</li>
+            <li class="list-group-item"><label>Numéro National</label><br>{{user?.nn}}</li>
+        </ul>
+        <ng-container >
+            Ajouter un rôle
+        <select class="form-select" aria-label="Default select example" (change)="AddRoleSUser($event,user.id)">
+            <option value="" >Choisissez un rôle à ajouter</option>
+            <option *ngFor="let role of listRoles" value="{{role.id}}"  >{{role.label}}</option>
+          </select>
+        </ng-container>
+        <ng-container >
+            Supprimer un role
+        <select class="form-select" aria-label="Default select example" *ngIf="user != null" (change)="deleteRolePers($event,user.id)">
+            <option value="" >Choisissez un rôle à supprimer</option>
+            <option *ngFor="let role of user.role_pers" value="{{role.id}}" >{{role.label}}</option>
+          </select>
+        </ng-container>
+    </div>
+  </div>
+  

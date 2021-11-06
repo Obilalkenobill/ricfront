@@ -1,0 +1,19 @@
+<div class="cont">
+<form id="commentForm" class="form" [formGroup]="commentForm" novalidate>
+    <mat-tab-group mat-stretch-tabs dynamicHeight>
+        <mat-tab label="Édit Comment">
+            <div class="form">
+                <mat-form-field>
+                    <textarea matInput id="commentaire" rows="6" id="textAreaExample2" class="form-control"
+                        [formControl]="commentCtl"></textarea>
+                    <mat-error class="field-error" *ngIf="commentCtl.hasError('required')"> require </mat-error>
+                </mat-form-field>
+            </div>
+        </mat-tab>
+    </mat-tab-group>    
+    <div class="footer">
+        <button type="submit" form="commentForm" class="btn btn-primary mr-2" [disabled]="commentForm.invalid"
+        (click)="update()">save</button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+    <h5 class="card-title">Photo de vérification</h5>
+    <img class="card-img-top" [src]="imgURLPhotoVerif" alt="Card image cap">
+    <h5 class="card-title">Recto de la carte d'identité</h5>
+    <img class="card-img-top" [src]="imgURLRectoCarte" alt="Card image cap">
+    <h5 class="card-title">Verso de la carte d'identité</h5>
+    <img class="card-img-top" [src]="imgURLVersoCarte" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Validation</h5>
+      <ul class="card-text">
+          <li>Vérifier que les images sont claires et qu'il ne s'agit pas de contrefaçons ou de montage</li>
+          <li>Le code sur l'affiche de la photo de vérification correspond il au 7 derniers termes  de ce code "{{user?.salt}}"</li>
+          <li>Les photos de vérification et de la carte d'identité correspondent</li>
+          <li>Les numéro national renseigné "{{user?.nn}}" et sur la carte d'identité correspondent</li>
+      </ul>
+      <a class="btn btn-primary" (click)="validate(user.id)">Valider</a>
+    </div>
+  </div>

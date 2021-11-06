@@ -1,0 +1,48 @@
+  <!-- navbar navbar-inverse navbar-static-top used for static hamburger menu -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+  <!-- container gives content bootstrap alignment -->
+  <div class="navbar-header">
+  <!-- navbar-header gives header -->
+  <!-- navbar-toggle collapsed for hide the content -->
+  <button type="button" class="navbar-toggle collapsed"
+  data-toggle="collapse" data-target="#menu">
+  <!-- sr-only gives feature, hides elements from all devices except screen -->
+  <span class="sr-only">Hamburger Menu</span> <span class="icon-bar"></span>
+  <span class="icon-bar"></span> <span class="icon-bar"></span>
+  <!-- icon-bar creates structure like triple equal -->
+  </button>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="menu">
+  <!--nav navbar-nav used to sets the navigation bar size( either increase or reduce) -->
+  <ul id="nav" class="nav navbar-nav">
+  <li class="nav_button"><a href="home"><span class="spanR">R.</span><span class="spanI">I.</span><span class="spanC">C.</span></a></li>
+  <li class="nav_button" *ngIf="!checkAuth()">
+    <a class="nav-link" routerLink="register">Create account</a>
+    <a class="nav-link" routerLink="auth">Login</a></li>
+  <li  class="nav_button" *ngIf="checkAuth()" ><a class="nav-link" (click)="logout()">Logout</a></li>
+  <li class="nav_button" *ngIf="checkAuth()"><a class="nav-link" routerLink="projets-view" >Projets</a></li>
+  <li class="nav_button" *ngIf="checkAuth() && !is_verified()"><a class="nav-link" (click)="userId()"><i class="glyphicon glyphicon-upload"></i></a></li>
+  <li class="nav_button" *ngIf="isAdmin()"><a class="nav-link" routerLink="users-view">Users</a></li>
+  <li class="nav_button" *ngIf="isAdmin()"><a class="nav-link" routerLink="view-roles">Roles</a></li>
+  <li class="nav_button" ><a class="nav-link" routerLink="charte">Charte</a></li>
+  </ul>
+  </div>
+  </div>
+  </nav>
+
+  <div class='container-fluid center_div'>
+    <ul class="list-group">
+      <router-outlet></router-outlet>
+    </ul>
+  </div>
+  
+  <footer>
+    <div class="footer">
+    <br>
+    <i class="glyphicon glyphicon-ok"></i> 
+    <br>
+    <span class="blancko"> Site du referendum à initiative Citoyen. Tout droit résèrvé au peuple. </span>
+    </div>
+  </footer>

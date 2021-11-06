@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="col-sm-8 col-sm-offset2">
+        <!-- <div class="form-group">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Voulez vous ajouter une image décrivant le projet</label>
+                <input class="form-control" type="file" accept="image/*" id="formFile1" (change)="onFileSelected1($event)" >
+            </div>
+        </div> -->
+        <form (ngSubmit)="onSubmit()" [formGroup]="projetForm">
+            <div class="form-group">
+                <label for="titre">
+                    Titre du Projet
+                </label>
+                <input type="text" id="titre" class="form-control" placeholder="titre" [formControl]="titreCtl">
+                <small class="text-danger" *ngIf="titreCtl.hasError('required')"> requis </small>
+            </div>
+            <div class="form-outline">
+                <label for="descriptif" class="form-label" for="textAreaExample">Message</label>
+                <textarea class="form-control" id="descriptif" rows="10" [formControl]="descriptifCtl"></textarea>
+                <small class="text-danger" *ngIf="descriptifCtl.hasError('required')"> requis </small>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="projetForm.invalid"> Enregistrer le projet</button>
+        </form>
+    </div>
+  </div>
+  

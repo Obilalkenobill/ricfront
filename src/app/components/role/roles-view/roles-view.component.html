@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">label</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of rolesList">
+                <td>{{ role.id }}</td>
+                <td>{{ role.label }}</td>
+                <td>
+                    <button type="button" class="btn btn-info">Info</button>
+                    <button type="button" class="btn btn-primary" >Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteRole(role.id)" ><i class="glyphicon glyphicon-trash"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)=redirectCreateRole()> Créer un rôle </button>
+</div>

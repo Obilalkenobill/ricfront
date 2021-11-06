@@ -1,0 +1,58 @@
+<button class="btn btn-primary grey" (click)=redirectCreateProjet()> Émettre un Projet </button>
+<button class="btn btn-primary orange" [routerLink]='["/own-projet"]'><i class="glyphicon glyphicon-user"></i> </button>
+<button class="btn btn-primary jaune" [routerLink]='["/*"]'><i class="glyphicon glyphicon-search"></i></button>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="mat-elevation-z2">
+            <table mat-table [dataSource]='dataSource' matSort matSortActive="id" matSortDirection="asc" 
+                matSortDisableClear width="100%">
+                <ng-container matColumnDef="titre">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> titre </th>
+                    <td style="width:13rem;height:6rem;max-height:6rem" mat-cell *matCellDef="let row"> {{ row.titre }}</td>
+                </ng-container>
+                <ng-container matColumnDef="descriptif">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> descriptif </th>
+                    <td class="d-inline-block text-truncate" style="width: 18rem;height:6rem;max-height:6rem" mat-cell *matCellDef="let row"> {{ row.descriptif }}</td>
+                </ng-container>
+                <ng-container matColumnDef="nbr_vote_pour">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> vote(s) pour </th>
+                    <td mat-cell *matCellDef="let row" class="alert alert-success" role="alert" > {{ row.nbr_vote_pour }}</td>
+                </ng-container>
+                <ng-container matColumnDef="nbr_vote_contre">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> vote(s) contre </th>
+                    <td mat-cell *matCellDef="let row" class="alert alert-danger" role="alert"> {{ row.nbr_vote_contre }}</td>
+                </ng-container>
+                <ng-container matColumnDef="nbr_vote_null">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> vote(s) null </th>
+                    <td mat-cell *matCellDef="let row" class="alert alert-secondary" role="alert"> {{ row.nbr_vote_null }}</td>
+                </ng-container>
+                <ng-container  matColumnDef="date_adm">
+                    <th class="smartfor" mat-header-cell *matHeaderCellDef mat-sort-header> date d'admission </th>
+                    <td class="smartfor" mat-cell *matCellDef="let row"> {{ row.date_adm }}</td>
+                </ng-container>
+                <ng-container matColumnDef="date_rej">
+                    <th class="smartfor" mat-header-cell *matHeaderCellDef mat-sort-header> date de rejet </th>
+                    <td class="smartfor" mat-cell *matCellDef="let row"> {{ row.date_rej }}</td>
+                </ng-container>
+                <ng-container matColumnDef="creation_date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> date de création</th>
+                    <td mat-cell *matCellDef="let row"> {{ row.creation_date }}</td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let row">
+                        <div class="btn-group">
+                            <button class="btn btn-info" [routerLink]='["/detail-proj", row.projet_id_id]'><i class="glyphicon glyphicon-resize-full"></i></button>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+           
+            </table>
+            <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 15, 20]"></mat-paginator>
+        </div>
+    </div>
+</div>

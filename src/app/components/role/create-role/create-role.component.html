@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="col-sm-8 col-sm-offset2">
+        <form (ngSubmit)="onSubmit()" [formGroup]="roleForm">
+            <div class="form-group">
+                <label for="label">
+                    Label of role
+                </label>
+                <input type="text" id="label" class="form-control" placeholder="label" [formControl]="labelCtl">
+                <small class="text-danger" *ngIf="labelCtl.hasError('required')"> requis </small>
+        </div>
+            <button class="btn btn-primary" type="submit" [disabled]="roleForm.invalid"> Enregistrer le rôle </button>
+        </form>
+    </div>
+  </div>
+  

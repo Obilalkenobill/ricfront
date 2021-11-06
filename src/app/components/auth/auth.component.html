@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-sm-8 col-sm-offset2">
+      <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+          <div class="form-group">
+              <label for="username">
+                  Email
+              </label>
+              <input type="text" id="username" class="form-control" placeholder="username" [formControl]="usernameCtl">
+              <small class="text-danger" *ngIf="usernameCtl.hasError('required')"> required </small>
+              <small class="text-danger" *ngIf="usernameCtl.hasError('usernameExist')"> username already exist </small>
+          </div>
+          <div class="form-group">
+              <label for="password">
+                  password
+              </label>
+              <input type="password" id="password" class="form-control" placeholder="" [formControl]="passwordCtl">
+              <small class="text-danger" *ngIf="passwordCtl.hasError('required')"> require </small>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid"> LoggIn </button>
+      </form>
+  </div>
+</div>

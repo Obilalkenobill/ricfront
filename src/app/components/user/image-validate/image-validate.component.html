@@ -1,0 +1,28 @@
+<form  >
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Photo de vérification, veuillez mettre une photo de vous avec une affiche en main contenant les 7 derniers termes de ce code :"{{user?.salt}}"</label>
+            <input class="form-control" type="file" accept="image/*" id="formFile1" (change)="onFileSelected1($event)" >
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Photo du recto de la carte d'identité</label>
+            <input class="form-control" accept="image/*" type="file" id="formFile2" (change)="onFileSelected2($event)" >
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Photo du verso de la carte d'identité</label>
+            <input class="form-control" type="file" accept="image/*" id="formFile3" (change)="onFileSelected3($event)">
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <h5 class="card-title">Photo de vérification</h5>
+        <img class="card-img-top" [src]="imgURLPhotoVerif" alt="Card image cap">
+        <h5 class="card-title">Recto de la carte d'identité</h5>
+        <img class="card-img-top" [src]="imgURLRectoCarte" alt="Card image cap">
+        <h5 class="card-title">Verso de la carte d'identité</h5>
+        <img class="card-img-top" [src]="imgURLVersoCarte" alt="Card image cap">
+      </div>
+</form>
