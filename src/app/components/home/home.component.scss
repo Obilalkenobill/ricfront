@@ -4,10 +4,13 @@
     display: flex;
     justify-content: center;
 	align-items: center;
+
 }
 
 .contenu{
     display: inline-block;
+    text-align: center;
+
 }
 
 .lettreR{
@@ -24,4 +27,17 @@
     color:red;
     font-size: 19px;
 
+}
+.brMedia{
+  display:none;
+}
+.imageHome{
+  width:100%;
+  margin-left: auto;
+  margin-right:auto;
+}
+@media screen and (max-width: 750px) {
+  .brMedia{
+display:block  ;
+}
 }
