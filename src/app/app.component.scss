@@ -1,34 +1,19 @@
-.sr-only{
-    margin-right: 5%;
-}
-
-.icon-bar{
-    margin-right: 5%;
-}
-ul{
-    margin:5%;
-}
-
-.nav_button{
-    cursor: pointer;
-    width:auto;
-    border-radius: 15%;
-    padding-left:1% ;
-    
-}
 
 .nav_button:hover{
     background-color: rgb(133, 133, 133);
 
 }
 .footer{
-    background-image: linear-gradient(white, black);
+    background-image: linear-gradient(white,black);
     width:100%;
-    height:10%;
+    height:13%;
     position:fixed;
     bottom:0px;
     right:0px;
     text-align: center;
+}
+.glyphicon-ok{
+  color:grey;
 }
 i{
     color:lightgrey;
@@ -51,19 +36,33 @@ i{
 .spanC{
     color:red;
 }
-@media screen and (max-width: 760px) {
-    #nav{
-        margin-right:50%;
-        margin-left:40%;
-    }
+
+@media screen and (max-width: 550px) {
+  .navbar{
+    width:130% !important;
+  }
+  .footer{
+    background-image: linear-gradient(white,black);
+    width:100%;
+    height:17%;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    text-align: center;
+}
 }
 
-@media screen and (min-width: 760px) {
-    #nav {
-        display: block;
-        clear: both;
-        width:900px;
-     }
-    #nav .nav_button {float:left;width:60px;display:inline; margin:3%}
-   
+@media screen and (max-height: 270px) and (max-width:190px) {
+  .navbar{
+    width:130% !important;
+  }
+  .footer{
+    background-image: linear-gradient(white,black);
+    width:100%;
+    height:60%;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    text-align: center;
+}
 }
